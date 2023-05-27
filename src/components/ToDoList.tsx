@@ -15,7 +15,6 @@ export const ToDoList = () => {
   const [newTask, setNewTask] = useState("");
   const [tasksChecked, setTasksChecked] = useState([]);
   const [recarregar, setRecarregar] = useState(false);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     let newTasksChecked: any = [];
@@ -47,8 +46,6 @@ export const ToDoList = () => {
       } catch (error) {
         console.log(error);
       }
-    } else {
-      setError(true);
     }
   };
 
