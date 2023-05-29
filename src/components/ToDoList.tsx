@@ -85,6 +85,7 @@ export const ToDoList = () => {
         </h1>
         <div className="flex justify-center items-center">
           <TextField
+            sx={{ width: "500px" }}
             type="text"
             placeholder="Add a task"
             value={newTask}
@@ -101,44 +102,37 @@ export const ToDoList = () => {
             </Button>
           </div>
         </div>
-        <ul className="flex flex-col gap-3 mt-3">
-          {tasks.map((task, index) => (
-            <li
-              style={{
-                fontFamily: "fantasy",
-                fontSize: "20px",
-                display: "flex",
-                justifyContent: "space-between",
-
-                gap: "20px",
-              }}
-              key={index}
-            >
-              <span>
-                {task.checked ? <CheckCircle /> : <RadioButtonUnchecked />}
-                {task.task}{" "}
-              </span>
-              <div className="flex gap-2">
-                <Button
-                  variant="outlined"
-                  color="error"
-                  size="large"
-                  onClick={() => handleExcluir(task.id)}
-                >
-                  Remove
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  color={task.checked ? "primary" : "success"}
-                  onClick={() => handleEditar(task.id, task.checked)}
-                >
-                  {task.checked ? "Refazer" : "Finalizar"}
-                </Button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col p-2 border-2 gap-3 mt-3 mb-2 overflow-x-hidden text-justify ">
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={index}>
+                <span className="break-words">
+                  {task.checked ? <CheckCircle /> : <RadioButtonUnchecked />}
+                  {task.task}
+                  {""}
+                </span>
+                <div className="flex gap-2 m-4 ml-0 justify-between ">
+                  <Button
+                    variant="outlined"
+                    color="error"
+                    size="large"
+                    onClick={() => handleExcluir(task.id)}
+                  >
+                    Remove
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    color={task.checked ? "primary" : "success"}
+                    onClick={() => handleEditar(task.id, task.checked)}
+                  >
+                    {task.checked ? "Refazer" : "Finalizar"}
+                  </Button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Paper>
     </div>
   );
