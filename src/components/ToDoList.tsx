@@ -103,7 +103,7 @@ export const ToDoList = () => {
           </div>
         </div>
         <div className=" flex flex-col p-2 gap-3 mt-3 mb-2 overflow-x-hidden text-justify">
-          <ul className="md:max-w-[204px] md:grid md:grid-cols-2 md:max-w-screen-md md:gap-4 ">
+          <ul className="md:grid md:grid-cols-2 md:max-w-screen-md md:gap-4 ">
             {tasks.map((task, index) => (
               <li key={index}>
                 <span className="break-words">
