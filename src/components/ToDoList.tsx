@@ -102,8 +102,8 @@ export const ToDoList = () => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col p-2 border-2 gap-3 mt-3 mb-2 overflow-x-hidden text-justify ">
-          <ul>
+        <div className=" flex flex-col p-2 gap-3 mt-3 mb-2 overflow-x-hidden text-justify">
+          <ul className="md:max-w-[204px] md:grid md:grid-cols-2 md:max-w-screen-md md:gap-4 ">
             {tasks.map((task, index) => (
               <li key={index}>
                 <span className="break-words">
@@ -111,7 +111,7 @@ export const ToDoList = () => {
                   {task.task}
                   {""}
                 </span>
-                <div className="flex gap-2 m-4 ml-0 justify-between ">
+                <div className="flex gap-2 m-4 ml-0 justify-start ">
                   <Button
                     variant="outlined"
                     color="error"
